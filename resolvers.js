@@ -21,7 +21,9 @@ const resolvers = {
             );
         },
         async deleteUser(_, {_id}) {
-            return await User.findOneAndDelete({_id});
+            const gotUser = await User.findOneAndDelete({_id});
+            if(!gotUser) return false;
+            return true;
         },
     }
 }
