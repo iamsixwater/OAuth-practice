@@ -11,6 +11,7 @@ const typeDefs = `
 
     type Query {
         allUsers: [User!]!
+        getUser(_id: ID): User
     }
 
     input UserInput {
