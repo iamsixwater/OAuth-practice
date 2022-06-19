@@ -12,6 +12,16 @@ const typeDefs = `
     type Query {
         allUsers: [User!]!
     }
+
+    input UserInput {
+        name: String!
+        age: Int!
+        gender: String!
+    }
+
+    type Mutation {
+        createUser(input: UserInput): User
+    }
 `;
 
 const schema = makeExecutableSchema({

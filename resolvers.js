@@ -5,6 +5,11 @@ const resolvers = {
         async allUsers() {
             return await User.find();
         }
+    },
+    Mutation: {
+        async createUser(_, {input}) {
+            return await User.create(input);
+        }
     }
 }
 
