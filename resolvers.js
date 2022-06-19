@@ -20,6 +20,9 @@ const resolvers = {
                 {new: true},
             );
         },
+        async deleteUser(_, {_id}) {
+            return await User.findOneAndDelete({_id});
+        },
     }
 }
 
