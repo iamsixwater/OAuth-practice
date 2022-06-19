@@ -13,6 +13,13 @@ const resolvers = {
         async createUser(_, {input}) {
             return await User.create(input);
         },
+        async updateUser(_, {_id, input}) {
+            return await User.findOneAndUpdate(
+                {_id},
+                input,
+                {new: true},
+            );
+        },
     }
 }
 
